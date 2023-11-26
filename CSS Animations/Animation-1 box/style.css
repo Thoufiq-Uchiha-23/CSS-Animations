@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+#box{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: lightseagreen;
+    position: absolute;
+    animation-name: anime;
+    animation-duration: 2s;
+    /* speed reducing technique : anim-delay */
+    animation-delay: 1s;
+    /* anim-fill-mode is used to set the element to be in current(backwards), final(forwards) or mix of both(both)*/
+    animation-fill-mode: forwards; /*also has both(takes both initial & final state) and backwards(for initial state)*/
+    /* repeatation of animation is determined by anim-iteration-count where we can set as 1,2,5,...,infinite */
+    animation-iteration-count: infinite;
+    /* anim-timing-function is the transition property like,
+    ease-in(start-ease/slow), ease-out(end-ease/slow), linear
+    and most importantly there is cubic(, , ,) like cubic-bezier(0,.71,.53,.54)
+    value which we can create our own transition, vist https://cubic-bezier.com/ 
+    */
+    animation-timing-function: linear;
+    /* anim-direction is to keep normal(default)/ reverse(final-->initial)/ alternate(both ie normal + reverse,
+    but for alternate need to keep it as anim-iteration count to infinite
+    */
+    animation-direction: alternate;
+    
+}
+
+/* in keyframes we define the animation, where anime is the identifier to target animation */
+@keyframes anime{
+    /*
+    0% = Start Form
+    (IN B/W CAN GIVE ANY PERCENTAGE)
+    50% = MIDDLE FORM
+    100% = Final Form
+    */
+    
+    0%{
+        left: 0;
+        top: 0;
+        background-color: lightseagreen;
+        transform: scale(0.5);
+        rotate: 0deg;
+        border-radius: 50%;
+    }
+
+    50%{
+        left: 75%;
+        top: 0;
+        background-color: lightgreen;
+        rotate: 360deg;
+        border-radius: 25%;
+    }
+
+    100%{
+        left: 75%;
+        top: 50%;
+        background-color: salmon;
+        rotate: 360deg;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans';
+    font-size: 30px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+/* #box{
+    height: 300px;
+    width: 300px;
+    background-color: salmon;
+    border: 1px solid black;
+}
+
+#box::before{
+    content: "V";
+}
+
+#box::after{
+    content : "<3";
+} */
+    
+#button{
+    padding: 20px 20px;
+    font-size: 60px;
+    border: none;
+    background-color: rgb(69, 187, 226);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(69, 187, 226);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.2s ease;
+}
+
+#button:hover::before{
+    transform: scale(1.4);
+    opacity: 0;
+}
+
+h1{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 20px;
+    font-weight: 700;
+    
+}
+
+h1::before{
+    content: "HAPPY SOCKS";
+    z-index: -1;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    color: transparent;
+}
